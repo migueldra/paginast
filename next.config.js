@@ -2,8 +2,14 @@ const path = require('path');
 
 const isGitHubPages = process.env.GITHUB_PAGES === 'true';
 const isCloudflare = process.env.CF_PAGES === '1' || process.env.CI === 'true' || !isGitHubPages;
-const basePath = isGitHubPages ? '/landingpage' : '';
-const assetPrefix = isGitHubPages ? '/landingpage' : '';
+
+// Para GitHub Pages:
+// - Si usas dominio personalizado (CNAME): basePath = '' (vacío)
+// - Si usas migueldra.github.io/paginast: basePath = '/paginast'
+// Por defecto, si tienes CNAME, usa '' (vacío). Cambia esto si necesitas el subpath.
+const repoName = 'paginast';
+const basePath = isGitHubPages ? (process.env.GITHUB_PAGES_BASE_PATH || '') : '';
+const assetPrefix = basePath;
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

@@ -1,5 +1,6 @@
 {
-  "name": "landingpage",
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "paginast",
   "main": "./.opennext/worker.js",
   "compatibility_date": "2026-01-16",
   "compatibility_flags": ["nodejs_compat"],

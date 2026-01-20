@@ -1,3 +1,4 @@
+// Datos actualizados de departamentos y municipios de Colombia
 export const departamentos = [
   'Amazonas', 'Antioquia', 'Arauca', 'Atlántico', 'Bogotá, D.C.', 'Bolívar',
   'Boyacá', 'Caldas', 'Caquetá', 'Casanare', 'Cauca', 'Cesar', 'Chocó',

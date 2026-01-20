@@ -1,7 +1,9 @@
 const path = require('path');
 
+// Detectar si estamos desplegando a GitHub Pages
+// Se activa cuando GITHUB_PAGES=true (configurado en predeploy con cross-env)
 const isGitHubPages = process.env.GITHUB_PAGES === 'true';
-const isCloudflare = process.env.CF_PAGES === '1' || process.env.CI === 'true' || !isGitHubPages;
+const isCloudflare = !isGitHubPages && (process.env.CF_PAGES === '1' || process.env.CI === 'true');
 
 // Para GitHub Pages:
 // - Si usas dominio personalizado (CNAME): basePath = '' (vacío)
